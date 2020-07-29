@@ -18,7 +18,7 @@ include_directories(${GTEST_INCLUDE_DIRS}
 add_executable(${appName} main.cpp
         gtest.cpp
         ../letcode.cpp
-        )
+        ../../datastructure/smart_pointer.cpp ../../datastructure/smart_pointer.h)
 
 # 链接测试库GTest 依赖 pthread 库, 所以要链接.
 # 特别提示: pthread 库一定要写在 ${GTEST_BOTH_LIBRARIES} 的后面, 否则编译时会报错,

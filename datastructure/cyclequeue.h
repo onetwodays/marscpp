@@ -28,7 +28,7 @@ private:
     unsigned int _len;
 public:
     cyclequeue(unsigned int cap):_cap(cap),_front(0),_rear(0){
-        _data = new T(_cap);
+        _data = new T[_cap];
     }
     ~cyclequeue(){
         delete [] _data;
@@ -56,8 +56,6 @@ public:
         _len--;
         return std::make_pair(true,tmp);
     }
-
-
 };
 
 

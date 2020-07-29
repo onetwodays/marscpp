@@ -22,7 +22,7 @@ add_executable(${appName} main.cpp
         ../ut_skiplist.c
         ../ut_sds.c
         ../ds_priorityqueue.cpp
-        ../cyclequeue.cpp ../cyclequeue.h ../bitmap.cpp ../bitmap.h)
+        ../cyclequeue.cpp ../cyclequeue.h ../bitmap.cpp ../bitmap.h "../ut_array_stack.h" ../ut_array_stack.c ../ut_dynarray_stack.h ../ut_dynarray_stack.c ../ut_ptr_stack.h ../ut_ptr_stack.c)
 
 # 链接测试库GTest 依赖 pthread 库, 所以要链接.
 # 特别提示: pthread 库一定要写在 ${GTEST_BOTH_LIBRARIES} 的后面, 否则编译时会报错,

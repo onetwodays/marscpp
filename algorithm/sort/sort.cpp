@@ -57,6 +57,27 @@ void sort::bubble(int* a,int length){
  */
 
 static int partition(int* a, int left, int right){
+    int privot_item = a[left];
+    int low=left;
+    while (left<right){
+        while (a[left]<=privot_item){
+            left++;
+        }
+
+        while (privot_item<a[right]){
+            right--;
+        }
+
+        if(left<right){
+            _swap(&a[left],&a[right]);
+        }
+
+    }
+    //right is final position for the privot
+    a[low]=a[right];
+    a[right]=privot_item;
+
+    /*
     int pivot = left; //设定基准值,是下标
     int index = pivot+1;
     for(int i = index; i <= right ; ++i){
@@ -67,6 +88,8 @@ static int partition(int* a, int left, int right){
     }
     _swap(&a[pivot],&a[index-1]); //index-1 代表的是基准值，放在left的位置
     return index-1;
+    */
+    return right;
 }
 void sort::quick(int *a, int left, int right) {
     if(left<right){
