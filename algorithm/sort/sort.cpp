@@ -29,6 +29,19 @@ static  void _swap(int* i,int* j){
 
 void sort::bubble(int* a,int length){
     if (!length) return;
+    bool is_contiun= true;
+    for(int i=length-1;(i>=1 && is_contiun);--i){
+        is_contiun= false; //假设不再继续
+        for(int j=0;j<i;++j){
+            if(a[j]>a[j+1]){
+                _swap(&a[j],&a[j+1]);
+                is_contiun=true;
+            }
+        }
+
+    }
+
+    /*
     for(int i = 0 ; i< length-1;++i){ //最后一个元素不用，所有是i<length-1
         bool flag = true ;
         for(int j=0;j<length-1-i;++j){
@@ -40,7 +53,7 @@ void sort::bubble(int* a,int length){
         if(flag){
             break;//退出外层循环，因为已经有序了
         }
-    }
+    }*/
 }
 /*
  * 快速排序（Quick Sort）

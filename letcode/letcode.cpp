@@ -4,6 +4,7 @@
 #include <climits>
 #include <stdio.h>
 #include "letcode.h"
+#include "string.h"
 //使用递归求和1+2+3+....+n
 int letcode::sum(int n) {
     int sum_= n;
@@ -312,4 +313,53 @@ int letcode::movesToMakeZigzag(std::vector<int> &nums) {
     }
     return std::min(s1, s2);
 
+
+}
+
+ char* letcode::strStr(const char* str1,const char* str2){
+    int len1=strlen(str1);
+    int len2=strlen(str2);
+    if(len2<1){
+        return (char*)str1;
+    }
+    if(len2>len1){
+        return NULL;
+    }
+
+    for(int i=1;i<=len1;++i){
+        if((len1-i)<len2){
+            return NULL;
+        }
+        int temp1=i-1;
+        int temp2=0;
+        while (str1[temp1++]==str2[temp2++]){
+            if(temp2==len2){
+                return (char*)&(str1[i-1]);
+            }
+        }
+    }
+}
+//abcabcbb ->3
+int letcode::lengthOfLongestSubstring(const std::string&s ){
+    std::unordered_map<char,int> window;
+    int left = 0;
+    int right = 0;
+    int res=0;//记录结果
+
+    while (right<s.size()){
+        char c = s[right];
+        right++;
+        window[c]++; //窗口里进行一系列的更新
+
+        //判断左窗口是否需要收缩
+        while (window[c]>1){
+            char d=s[left];
+            left++;
+            //进行窗口里一系列更新
+            window[d]--;
+        }
+        //在这里更新答案
+        res=std::max(res,(right-left));
+    }
+    return res;
 }

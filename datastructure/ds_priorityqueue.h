@@ -59,13 +59,12 @@ private:
             }else{
                 return;
             }
-
         }
     }
 
     void adjust_up(std::size_t child){
         if(child>=size()){
-            return;
+            return; //数组的下标超出范围了
         }
         std::size_t par = parent(child);
         while (child){
@@ -80,9 +79,10 @@ private:
         }
 
     }
-    inline std::size_t left_child(std::size_t i){ return 2*i+1;}
+    inline std::size_t left_child(std::size_t  i){ return 2*i+1;}
     inline std::size_t right_child(std::size_t i){ return 2*i+2;}
-    inline std::size_t parent(std::size_t i){ return (i-1)/2;}
+    inline std::size_t parent(std::size_t      i){ return (i-1)/2;}
+
 
 };
 

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 
 
 class letcode {
@@ -55,6 +56,11 @@ public:
 
      */
     static int movesToMakeZigzag(std::vector<int>& nums);
+    static char* strStr(const char* str1,const char* str2);
+    //最长无重复子串的长度，是子串，不是子排列
+    static  int lengthOfLongestSubstring(const std::string&s );
+
+
 };
 class A{
 public:

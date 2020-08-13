@@ -74,6 +74,8 @@ char* binary_find::strstr(const char* str1,const char* str2){
     if(!str1){ return nullptr;}
     if(!str2){return (char*)str1;}
     int str2_length = std::strlen(str2);
+    int str1_length = std::strlen(str1);
+    if(str1_length<str2_length){ return NULL;}
     while (str1){
         for(int n = 0;n<str2_length;n++){
             if(*(str1+n)==*(str2+n)){

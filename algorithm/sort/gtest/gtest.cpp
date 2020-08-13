@@ -32,6 +32,11 @@ TEST(testSort,bubble){
     print(a,5);
     sort::bubble(a,5);
     print(a,5,"bubble");
+
+    int b[6]={55,44,33,22,11,11};
+    print(b,6);
+    sort::bubble(b,6);
+    print(b,6,"bubble");
 }
 
 TEST(testSort,quick){
